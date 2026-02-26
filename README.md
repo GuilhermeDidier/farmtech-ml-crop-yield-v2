@@ -94,6 +94,27 @@ jupyter notebook
 
 ---
 
+## 📓 Notebooks Jupyter
+
+Acesse os notebooks completos diretamente no repositório:
+
+1. **[Parte 1: Análise Exploratória de Dados (EDA)](notebooks/GuilhermeDidierGarcia_rm568457_pbl_fase4_eda.ipynb)**
+   - Carregamento e inspeção dos dados
+   - Análise de distribuições e correlações
+   - Detecção de outliers
+
+2. **[Parte 2: Clusterização](notebooks/GuilhermeDidierGarcia_rm568457_pbl_fase4_cluster.ipynb)**
+   - K-Means, DBSCAN e Hierarchical Clustering
+   - Análise de padrões de produtividade
+   - Comparação de métodos
+
+3. **[Parte 3: Modelos Preditivos](notebooks/GuilhermeDidierGarcia_rm568457_pbl_fase4_modelos.ipynb)**
+   - 5 modelos de regressão implementados
+   - Comparação de métricas (R², RMSE, MAE, MAPE)
+   - Validação cruzada e análise de resíduos
+
+---
+
 ## 🔍 Análises Realizadas
 
 ### 📊 Parte 1 — Análise Exploratória de Dados (EDA)
