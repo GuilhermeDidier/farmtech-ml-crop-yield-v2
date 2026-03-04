@@ -123,26 +123,30 @@ Acesse os notebooks completos diretamente no repositório:
 - Análise de distribuições, histogramas e boxplots
 - Matriz de correlação e pairplot por cultura
 - Detecção de outliers com IQR, Z-Score e Isolation Forest
-- **Principal achado:** O tipo de cultura é o fator dominante no rendimento, com Oil palm fruit produzindo em média ~175.804 kg/ha contra ~8.883 kg/ha do Cacau
+- **Principal achado:** O tipo de cultura é o fator dominante no rendimento, com Oil palm fruit produzindo em média ~172.805 kg/ha contra ~8.753 kg/ha do Cacau
 
 ### 🎯 Parte 2 — Clusterização
 
-- **K-Means** com Elbow Method → K=8 (Silhouette Score: 0.391)
-- **DBSCAN** (Density-Based) → identificou baixa densidade, não adequado para este dataset
-- **Hierarchical Clustering** → Silhouette Score: 0.354
-- **Principal achado:** K-Means foi o melhor método; os clusters se organizam principalmente pelo tipo de cultura
+- **K-Means** com Elbow Method → K=2 (Silhouette Score: 0.243)
+- **DBSCAN** (Density-Based) → não adequado para este dataset; com parâmetros ajustados (eps=2.0, min_samples=5) encontrou 1 cluster sem separação discriminativa
+- **Hierarchical Clustering** → Silhouette Score: 0.243 (idêntico ao K-Means)
+- **Principal achado:** K-Means foi o melhor método; os 2 clusters separam Oil palm fruit (alta produtividade) das demais culturas (baixa produtividade)
 
 ### 🤖 Parte 3 — Modelos Preditivos
 
 | Modelo | R² (Teste) | RMSE | MAE | MAPE (%) |
 |---|---|---|---|---|
-| **🏆 Random Forest** | **0.9944** | **4.640** | **2.748** | **7.99%** |
-| Gradient Boosting | 0.9902 | 6.176 | 3.186 | 8.58% |
-| Regressão Linear | -0.1015 | 65.365 | 53.724 | 361.73% |
-| SVR | -0.3082 | 71.235 | 38.837 | 63.97% |
-| MLP (Rede Neural) | -0.1728 | 67.447 | 41.393 | 155.85% |
+| **🏆 Regressão Linear** | **0.9950** | **4.394** | 3.133 | 14.17% |
+| Random Forest | 0.9942 | 4.747 | **2.740** | **7.47%** |
+| Gradient Boosting | 0.9913 | 5.806 | 3.053 | 8.02% |
+| MLP (Rede Neural) | 0.9793 | 8.965 | 7.291 | 52.31% |
+| SVR | 0.9397 | 15.292 | 14.286 | 114.70% |
 
-**Melhor modelo:** Random Forest com R² = 0.9944 e MAPE de apenas 7.99%
+> *RMSE e MAE em milhares de kg/ha.*
+
+**Melhor R² de teste:** Regressão Linear (0.9950) — beneficiada pelo OneHotEncoding da variável Crop
+
+**Modelo recomendado para produção:** Random Forest — menor MAPE (7.47%), menor MAE (2.740), menor overfitting e validação cruzada estável (R² CV = 0.9848)
 
 ---
 
