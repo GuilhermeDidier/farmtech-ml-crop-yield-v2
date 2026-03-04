@@ -7,7 +7,7 @@ Este diretório contém todos os notebooks Jupyter do projeto, organizados em or
 Execute os notebooks na seguinte ordem:
 
 ### 1️⃣ Análise Exploratória de Dados (EDA)
-**Arquivo:** `analise_exploratoria_crop_yield.ipynb`
+**Arquivo:** `GuilhermeDidierGarcia_rm568457_pbl_fase4_eda.ipynb`
 
 **Conteúdo:**
 - Carregamento e inspeção do dataset
@@ -22,7 +22,7 @@ Execute os notebooks na seguinte ordem:
 ---
 
 ### 2️⃣ Análise de Clusterização
-**Arquivo:** `clusterizacao_crop_yield.ipynb`
+**Arquivo:** `GuilhermeDidierGarcia_rm568457_pbl_fase4_cluster.ipynb`
 
 **Conteúdo:**
 - K-Means clustering com Elbow Method
@@ -38,7 +38,7 @@ Execute os notebooks na seguinte ordem:
 ---
 
 ### 3️⃣ Modelos Preditivos de Regressão
-**Arquivo:** `modelos_preditivos_crop_yield.ipynb`
+**Arquivo:** `GuilhermeDidierGarcia_rm568457_pbl_fase4_modelos.ipynb`
 
 **Conteúdo:**
 - Preparação dos dados (encoding, normalização)
@@ -62,7 +62,7 @@ Execute os notebooks na seguinte ordem:
 ### Método 1: Jupyter Notebook
 ```bash
 # Navegar até a pasta do projeto
-cd Documents/farmtech_ml_project
+cd farmtech-ml-crop-yield-v2
 
 # Abrir Jupyter
 jupyter notebook
@@ -96,14 +96,17 @@ code .
 - ✅ ~10% de outliers detectados
 
 ### Clusterização
-- ✅ 8 clusters ótimos (K-Means)
-- ✅ Silhouette Score: ~0.39
-- ✅ Identificação de padrões de rendimento
+- ✅ 2 clusters ótimos (K-Means) — Oil palm fruit vs demais culturas
+- ✅ Silhouette Score: 0.243
+- ✅ Hierarchical Clustering com mesmo resultado (Silhouette: 0.243)
+- ✅ DBSCAN não adequado para este dataset (baixa variabilidade de densidade)
 
 ### Modelos Preditivos
-- ✅ Random Forest: R² > 0.99 (melhor modelo)
-- ✅ Gradient Boosting: R² > 0.99
-- ✅ MAPE < 10% (excelente precisão)
+- ✅ Regressão Linear: R² = 0.9950 (melhor R² de teste — beneficiada pelo OneHotEncoding)
+- ✅ Random Forest: R² = 0.9942 — recomendado para produção (menor MAPE: 7.47%)
+- ✅ Gradient Boosting: R² = 0.9913
+- ✅ SVR: R² = 0.9397 (corrigido com normalização do target)
+- ✅ MLP: R² = 0.9793 (corrigido com normalização do target)
 
 ---
 
