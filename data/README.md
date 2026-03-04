@@ -19,7 +19,7 @@ Este diretório contém os datasets utilizados no projeto.
 | `Specific Humidity at 2 Meters (g/kg)` | Numérica | Umidade específica a 2m | g/kg |
 | `Relative Humidity at 2 Meters (%)` | Numérica | Umidade relativa a 2m | % |
 | `Temperature at 2 Meters (C)` | Numérica | Temperatura a 2m | °C |
-| `Yield` | Numérica | **Rendimento da safra (target)** | toneladas/hectare |
+| `Yield` | Numérica | **Rendimento da safra (target)** | kg/hectare |
 
 ---
 
@@ -32,32 +32,31 @@ Este diretório contém os datasets utilizados no projeto.
 
 ### Tipos de Culturas:
 1. Cocoa, beans (Cacau)
-2. Coffee, green (Café)
-3. Tea (Chá)
-4. Cassava (Mandioca)
+2. Oil palm fruit (Dendê)
+3. Rice, paddy (Arroz)
+4. Rubber, natural (Borracha natural)
 
 ---
 
 ## 🔍 Estatísticas das Variáveis
 
 ### Precipitation (Precipitação)
-- Média: 2,486 mm/dia
-- Min: 1,935 mm/dia
-- Max: 3,086 mm/dia
+- Média: 2.471 mm/dia
+- Min: 1.846 mm/dia
+- Max: 3.248 mm/dia
 
 ### Temperature (Temperatura)
-- Média: 25.5°C
-- Min: 24.1°C
-- Max: 27.1°C
+- Média: 26.19°C
+- Min: 25.40°C
+- Max: 27.10°C
 
 ### Yield (Rendimento) - **Variável Alvo**
-- Média: 56,153 ton/ha
-- Mediana: 18,871 ton/ha
-- Min: 5,249 ton/ha
-- Max: 203,399 ton/ha
-- Desvio padrão: 70,422 ton/ha
+- Média: 56.302 kg/ha
+- Min: 4.569 kg/ha (Cocoa)
+- Max: 216.386 kg/ha (Oil palm fruit)
+- Desvio padrão: 68.606 kg/ha
 
-**Observação:** Grande variação no rendimento indica diferentes tipos de culturas com produtividades muito distintas.
+**Observação:** Grande variação no rendimento (~47x entre culturas) indica que o tipo de cultura é o fator dominante — Oil palm fruit produz ~20x mais que Cocoa.
 
 ---
 
@@ -65,10 +64,10 @@ Este diretório contém os datasets utilizados no projeto.
 
 As correlações entre as variáveis climáticas e o rendimento são relativamente baixas:
 
-- Precipitation: 0.019
-- Temperature: 0.013
-- Specific Humidity: 0.013
-- Relative Humidity: 0.000
+- Specific Humidity: +0.120
+- Precipitation: +0.043
+- Relative Humidity: +0.045
+- Temperature: -0.109
 
 **Interpretação:** O tipo de cultura (`Crop`) é o fator mais importante para o rendimento, mais do que as condições climáticas.
 

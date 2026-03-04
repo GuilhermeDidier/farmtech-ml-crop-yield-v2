@@ -40,7 +40,10 @@ print("\n[OK] Bibliotecas importadas com sucesso!\n")
 print("1. CARREGAMENTO DOS DADOS")
 print("-" * 80)
 
-df = pd.read_csv('crop_yield.csv')
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(script_dir, '..', 'data', 'crop_yield.csv')
+df = pd.read_csv(csv_path)
 print(f"[OK] Dataset carregado com sucesso!")
 print(f"Dimensoes: {df.shape[0]} linhas, {df.shape[1]} colunas\n")
 
