@@ -42,7 +42,7 @@ Thumbs.db
 *.csv
 *.xlsx
 *.xls
-!crop_yield.csv
+!data/crop_yield.csv
 
 # Modelos treinados
 *.pkl
