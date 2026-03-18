@@ -154,7 +154,7 @@ Acesse os notebooks completos diretamente no repositório:
 
 | Entrega | Link |
 |---|---|
-| Entrega 1 — Machine Learning | *(link a ser adicionado)* |
+| Entrega 1 — Machine Learning |https://youtu.be/aQOpKkQqoYs |
 | Entrega 2 — Computação em Nuvem | *(link a ser adicionado)* |
 
 ---
